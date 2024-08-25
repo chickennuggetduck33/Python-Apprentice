@@ -9,5 +9,5 @@ Hint: See 08a_More Turtle Programs, section 'Change the Background Image' and
 'Change the Turtle Shape'
 """
 
-... # Your code here
+ # Your code here
 
