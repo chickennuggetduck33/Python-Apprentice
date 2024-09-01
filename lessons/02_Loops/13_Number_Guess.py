@@ -42,9 +42,26 @@ def ask_integer(prompt):
 
 
 # Pick the random number
-
+while True:
+    n = random.randint(1, 100)
+    if n % 7 == 0:
+        pass
+    else:
+        break
 # In your loop:
-
+while True:
+    sigma = ask_integer("give number")
+    if sigma % 7 == 0:
+        print("thats a bad number try again")
+    else:
+        if sigma > n:
+            print("too high")
+        elif sigma < n:
+            print("too low")
+        else:
+            print("perfect!")
+            break
+        
     # Get the user's guess
 
     # If the user's guess is divisible by 7, tell the user to start over
