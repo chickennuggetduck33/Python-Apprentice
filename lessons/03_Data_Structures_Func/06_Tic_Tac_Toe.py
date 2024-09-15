@@ -8,6 +8,7 @@ O_MARK = "O"
 # IMPORTANT! In your code, you should use the constants X_MARK and O_MARK instead of the strings "x" and "o"
 
 def check_row(l):
+    
     """Check if a player won on a row
     Args:
         l: a 3 element iterable
