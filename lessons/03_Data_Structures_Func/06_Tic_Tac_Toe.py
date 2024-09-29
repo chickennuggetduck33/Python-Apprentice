@@ -8,8 +8,46 @@ O_MARK = "O"
 # IMPORTANT! In your code, you should use the constants X_MARK and O_MARK instead of the strings "x" and "o"
 
 def check_row(l):
-    if l[0][0]== l[0][1] and l[0][1]==l[0][2]:
-        print("sigma")
+    if l[0][0]== l[0][1] and l[0][1]==l[0][2] and( l[0][0] == X_MARK or l[0][0] == O_MARK):
+        if l[0][0]==X_MARK:
+            info("Tic-tac-toe","x wins!")
+        else:
+            info("Tic-tac-toe","o wins!")
+    if l[1][0]== l[1][1] and l[1][1]==l[1][2] and( l[1][0] == X_MARK or l[1][0] == O_MARK):
+        if l[1][0]==X_MARK:
+            info("Tic-tac-toe","x wins!")
+        else:
+            info("Tic-tac-toe","o wins!")
+    if l[2][0]== l[2][1] and l[2][1]==l[2][2] and( l[2][0] == X_MARK or l[2][0] == O_MARK):
+        if l[2][0]==X_MARK:
+            info("Tic-tac-toe","x wins!")
+        else:
+            info("Tic-tac-toe","o wins!")
+    if l[0][0]== l[1][0] and l[0][0]==l[2][0] and( l[0][0] == X_MARK or l[0][0] == O_MARK):
+        if l[0][0]==X_MARK:
+            info("Tic-tac-toe","x wins!")
+        else:
+            info("Tic-tac-toe","o wins!")
+    if l[0][1]== l[1][1] and l[0][1]==l[2][1] and( l[0][1] == X_MARK or l[0][1] == O_MARK):
+        if l[0][1]==X_MARK:
+            info("Tic-tac-toe","x wins!")
+        else:
+            info("Tic-tac-toe","o wins!")
+    if l[0][2]== l[1][2] and l[0][2]==l[2][2] and( l[0][2] == X_MARK or l[0][2] == O_MARK):
+        if l[0][2]==X_MARK:
+            info("Tic-tac-toe","x wins!")
+        else:
+            info("Tic-tac-toe","o wins!")
+    if l[0][0]== l[1][1] and l[0][0]==l[2][2] and( l[0][0] == X_MARK or l[0][0] == O_MARK):
+        if l[0][0]==X_MARK:
+            info("Tic-tac-toe","x wins!")
+        else:
+            info("Tic-tac-toe","o wins!")
+    if l[2][0]== l[1][1] and l[2][0]==l[0][2] and( l[2][0] == X_MARK or l[2][0] == O_MARK):
+        if l[2][0]==X_MARK:
+            info("Tic-tac-toe","x wins!")
+        else:
+            info("Tic-tac-toe","o wins!")
     """Check if a player won on a row
     Args:
         l: a 3 element iterable
@@ -46,7 +84,7 @@ class TicTacToe:
     turn_n = 0
     turn = X_MARK
 
-    def __init__(self, win_func=check_win):
+    def __init__(self, win_func=check_row):
         self.board = None # The stoage for user's markers
         
         self.app = App('Tic Tac Toe Game', bg='burlywood')
@@ -105,6 +143,5 @@ class TicTacToe:
             self.message.value = "It's a draw!"
             info("Tic-tac-toe","It's a draw!")
 
-ttt = TicTacToe(check_win)
+ttt = TicTacToe(check_row)
 ttt.start()
-check_row(ttt.buttons[0][0::])
