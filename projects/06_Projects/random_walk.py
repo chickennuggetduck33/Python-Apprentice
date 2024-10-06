@@ -43,8 +43,10 @@ def random_walk(walker, steps):
     # from a list, like this: 
     # direction = random.choice(["N", "E", "S", "W"])
     # or
-    # angle = random.choice([0, 90, 180, 270])
-    #
+    for i in range(500):
+        angle = random.choice([0, 90, 180, 270])
+        walker.left(angle)
+        walker.forward(20)
     # Or you can use random.randint() to generate a random integer between two values, like this:
     # angle_index = random.randint(0, 4)
     # directions = ["N", "E", "S", "W"] # or directions = [0, 90, 180, 270]
