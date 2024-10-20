@@ -40,8 +40,11 @@ def add_definition(db, key, value):
     """
 
     # Check the limit
-    if len(db) > 5:
-            error("input error", "too many words")
+    if len(db) >= 5:
+        error("input error", "too many words")
+    else:
+        db[key]=value
+        
     # Set the item in the database
 
     pass
@@ -50,7 +53,7 @@ def add_definition(db, key, value):
 def delete_definition(db, key):
     """
     Deletes the definition associated with the given key from the database.
-
+    
     Args:
         db (dict): The database containing the key-value pairs.
         key: The key to be deleted from the database.
@@ -58,7 +61,7 @@ def delete_definition(db, key):
     Returns:
         None
     """
-
+    
     # Delete the item from db if it is present
 
     pass
@@ -91,11 +94,11 @@ def update_listbox(db):
 
     # This function will return a list of definitions to be displayed in the listbox, like
     # the one below. (For your function, you should set this list to the empty list)
-    l = [
-        "Item 1: Fake Definition 1",
-        "Item 2: Fake Definition 2",
-        "Item 3: fake Definition 3"
-    ]
+    l = []
+    for key, value in db.items():
+        l.append(
+            str(key) + ":" + str(value)
+            )
 
     # Add each definition to a string
     # iterate over the dict's key-value pairs and turn them into
